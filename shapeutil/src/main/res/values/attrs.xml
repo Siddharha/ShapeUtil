@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleView">
+        <attr name="feel_color" format="boolean" />
+        <attr name="src" format="string" />
+        <attr name="stroke_size" format="float" />
+        <attr name="feel_back_color" format="string" />
+        <attr name="draw_img_back" format="integer" />
+       <!-- <attr name="labelPosition" format="enum">
+            <enum name="left" value="0"/>
+            <enum name="right" value="1"/>
+        </attr>-->
+    </declare-styleable>
+</resources>

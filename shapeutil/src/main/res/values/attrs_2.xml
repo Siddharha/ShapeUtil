@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ShapeImageView">
+        <attr name="sm_feel_color" format="boolean" />
+        <attr name="sm_feel_back_color" format="string" />
+        <attr name="sm_draw_img_back" format="integer" />
+        <attr name="sm_draw_img_mask" format="integer" />
+    </declare-styleable>
+</resources>
