@@ -28,3 +28,20 @@ ShapeUtill is a library for Shape Creation and image shape manipulation
                     app:src="@color/colorPrimary"
                     app:stroke_size="5"
                     android:layout_alignParentLeft="true" />  
+
+For Image view in circle use:
+			
+	app:draw_img_back="@drawable/image"
+2. For Any Shape use:
+		
+		<in.creativelizard.shapeutil.ShapeImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="131dp"
+        android:layout_marginTop="144dp"
+        app:sm_draw_img_back="@drawable/image"
+        app:sm_draw_img_mask="@drawable/mask"
+        app:sm_feel_back_color="#00bcd4"
+        app:sm_feel_color="true" />
