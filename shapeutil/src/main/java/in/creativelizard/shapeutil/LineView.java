@@ -19,6 +19,7 @@ import android.view.View;
  */
 
 public class LineView extends View {
+    public float LN_PROGRESS;
     public   float STROKE_SIZE;
     private Context mContext;
     Paint paint ;
@@ -34,7 +35,8 @@ public class LineView extends View {
 
         try {
             draw_color =a.getString(R.styleable.LineView_ln_color);
-            STROKE_SIZE = a.getFloat(R.styleable.LineView_ln_stroke, 1F);
+            STROKE_SIZE = a.getFloat(R.styleable.LineView_ln_stroke, -1F);
+            LN_PROGRESS = a.getFloat(R.styleable.LineView_ln_progress, 0F);
         } finally {
             a.recycle();
         }
@@ -59,7 +61,13 @@ public class LineView extends View {
 
                 paint.setStyle(Paint.Style.FILL_AND_STROKE);
                 paint.setColor(Color.parseColor(draw_color));
-                canvas.drawLine(0,(h/2),w,(h/2),paint);
+
+        float toGO = (LN_PROGRESS/100) * w;
+                if(LN_PROGRESS>0) {
+                    canvas.drawLine(0, (h / 2), toGO, (h / 2), paint);
+                }else {
+                    canvas.drawLine(0, (h / 2), w, (h / 2), paint);
+                }
 
        /* Path path = new Path();
         path.setFillType(Path.FillType.EVEN_ODD);
