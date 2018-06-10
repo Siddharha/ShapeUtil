@@ -5,8 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-    <in.creativelizard.shapeutil.ShapeImageView
-        android:layout_width="300dp"
-        app:sm_feel_back_color="#c2c2c2"
-        android:layout_height="300dp" />
+
+    <in.creativelizard.shapeutil.LineView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:ln_stroke="70"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:ln_color="#00bcd4" />
 </android.support.constraint.ConstraintLayout>

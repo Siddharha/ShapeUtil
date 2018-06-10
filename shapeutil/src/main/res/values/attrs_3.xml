@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LineView">
+        <attr name="ln_color" format="string" />
+        <attr name="ln_stroke" format="float" />
+    </declare-styleable>
+</resources>
