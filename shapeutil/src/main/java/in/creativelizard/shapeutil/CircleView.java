@@ -31,6 +31,7 @@ public class CircleView extends View {
     public int feel_type;
     public Drawable draw_back_img;
     public boolean isFill;
+    private Bitmap original;
 
     public CircleView(Context ctx, AttributeSet attrs) {
         super(ctx, attrs);
@@ -86,7 +87,7 @@ public class CircleView extends View {
 
                 paint.setStyle(Paint.Style.FILL);
                 paint.setColor(Color.BLACK);
-                Bitmap original = ((BitmapDrawable)draw_back_img).getBitmap();
+                original = ((BitmapDrawable)draw_back_img).getBitmap();
 
                 switch (feel_type){
                     case 0:
@@ -152,4 +153,6 @@ public class CircleView extends View {
         //canvas.drawPath(path, paint);
 
     }
+
+
 }
