@@ -28,6 +28,7 @@ public class CircleView extends View {
     public String draw_color = "#c2c2c2";
     public String fill_back_color = "#c2c2c2";
     public float RADIOUS;
+    public int feel_type;
     public Drawable draw_back_img;
     public boolean isFill;
 
@@ -45,6 +46,7 @@ public class CircleView extends View {
             fill_back_color =a.getString(R.styleable.CircleView_feel_back_color);
             draw_back_img =a.getDrawable(R.styleable.CircleView_draw_img_back);
             STROKE_SIZE = a.getFloat(R.styleable.CircleView_stroke_size, 1F);
+            feel_type = a.getInteger(R.styleable.CircleView_feel_type, 1);
         } finally {
             a.recycle();
         }
@@ -85,6 +87,24 @@ public class CircleView extends View {
                 paint.setStyle(Paint.Style.FILL);
                 paint.setColor(Color.BLACK);
                 Bitmap original = ((BitmapDrawable)draw_back_img).getBitmap();
+
+                switch (feel_type){
+                    case 0:
+                        original = Bitmap.createScaledBitmap(original, w, h, false);
+                        break;
+                    case 1:
+                        //original = Bitmap.createScaledBitmap(original, w, h, false);
+                        break;
+                    case 2:
+                        if(w>h){
+                            original = Bitmap.createScaledBitmap(original, h, h, false);
+                        }else if(w<h){
+                            original = Bitmap.createScaledBitmap(original, w, w, false);
+                        }else {
+                            original = Bitmap.createScaledBitmap(original, w, h, false);
+                        }
+                        break;
+                }
                 Bitmap mask = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
                Canvas canvas_mask = new Canvas(mask);
 

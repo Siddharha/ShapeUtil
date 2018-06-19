@@ -6,9 +6,10 @@
         <attr name="stroke_size" format="float" />
         <attr name="feel_back_color" format="string" />
         <attr name="draw_img_back" format="integer" />
-       <!-- <attr name="labelPosition" format="enum">
-            <enum name="left" value="0"/>
-            <enum name="right" value="1"/>
-        </attr>-->
+       <attr name="feel_type" format="enum">
+            <enum name="resize_center" value="0"/>
+            <enum name="center" value="1"/>
+           <enum name="resize_center_with_ratio" value="2"/>
+        </attr>
     </declare-styleable>
 </resources>

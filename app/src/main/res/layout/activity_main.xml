@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <in.creativelizard.shapeutil.LineView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:ln_stroke="70"
-        app:ln_progress="60"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:ln_color="#00bcd4" />
+    <in.creativelizard.shapeutil.CircleView
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        app:src="@color/colorPrimary"
+        app:feel_color="true"
+        app:feel_type="resize_center_with_ratio"
+        app:draw_img_back="@drawable/person"
+        app:stroke_size="5"/>
 </android.support.constraint.ConstraintLayout>
