@@ -14,8 +14,9 @@ ShapeUtill is a library for Shape Creation and image shape manipulation
 2. Add Below to app gradle.build
 
         	dependencies {
-	        implementation 'com.github.Siddharha:ShapeUtil:0.2.0'
-	        }
+	        implementation 'com.github.Siddharha:ShapeUtil:0.2.1'
+		}
+
 
 ## Use Guide.
 1. For Circle Drawing:
