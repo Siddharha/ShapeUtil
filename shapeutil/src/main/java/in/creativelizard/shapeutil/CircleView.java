@@ -29,7 +29,8 @@ public class CircleView extends View {
     public String fill_back_color = "#c2c2c2";
     public float RADIOUS;
     public int feel_type;
-    public Drawable draw_back_img;
+    private Drawable draw_back_img;
+    public Bitmap draw_back_img_bmp;
     public boolean isFill;
     private Bitmap original;
 
@@ -46,6 +47,12 @@ public class CircleView extends View {
             draw_color =a.getString(R.styleable.CircleView_src);
             fill_back_color =a.getString(R.styleable.CircleView_feel_back_color);
             draw_back_img =a.getDrawable(R.styleable.CircleView_draw_img_back);
+
+            try {
+                draw_back_img_bmp = ((BitmapDrawable) draw_back_img).getBitmap();
+            }catch (NullPointerException e){
+                //
+            }
             STROKE_SIZE = a.getFloat(R.styleable.CircleView_stroke_size, 1F);
             feel_type = a.getInteger(R.styleable.CircleView_feel_type, 1);
         } finally {
@@ -79,7 +86,7 @@ public class CircleView extends View {
         paint.setAntiAlias(true);
         if(isFill) {
 
-            if (draw_back_img!=null){
+            if (draw_back_img_bmp!=null){
 
                 paint.setStyle(Paint.Style.STROKE);
                 paint.setColor(Color.parseColor(draw_color));
@@ -87,7 +94,7 @@ public class CircleView extends View {
 
                 paint.setStyle(Paint.Style.FILL);
                 paint.setColor(Color.BLACK);
-                original = ((BitmapDrawable)draw_back_img).getBitmap();
+                original = draw_back_img_bmp;
 
                 switch (feel_type){
                     case 0:

@@ -7,8 +7,21 @@
     tools:context=".MainActivity">
 
     <in.creativelizard.shapeutil.LineView
+        android:id="@+id/lineView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:ln_color="#00bcd4"
-        app:ln_stroke="15"/>
+        app:ln_stroke="15" />
+
+    <in.creativelizard.shapeutil.CircleView
+        android:id="@+id/imgPerson"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="8dp"
+        app:feel_color="true"
+        app:feel_type="resize_center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lineView"
+        app:src="@color/colorPrimary" />
 </android.support.constraint.ConstraintLayout>
