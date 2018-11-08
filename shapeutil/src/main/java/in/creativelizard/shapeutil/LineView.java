@@ -11,8 +11,12 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.os.CountDownTimer;
+import android.os.Handler;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 /**
  * Created by Siddhartha on 6/8/2018.
@@ -21,13 +25,13 @@ import android.view.View;
 public class LineView extends View {
     public float LN_PROGRESS;
     public   float STROKE_SIZE;
+    public float ANIMATION_TO = 0;
     private Context mContext;
     Paint paint ;
     public String draw_color;
 
     public LineView(Context ctx, AttributeSet attrs) {
         super(ctx, attrs);
-
         TypedArray a = ctx.getTheme().obtainStyledAttributes(
                 attrs,
                 R.styleable.LineView,
@@ -64,9 +68,9 @@ public class LineView extends View {
 
         float toGO = (LN_PROGRESS/100) * w;
                 if(LN_PROGRESS>0) {
-                    canvas.drawLine(0, (h / 2), toGO, (h / 2), paint);
+                    canvas.drawLine(ANIMATION_TO, (h / 2), toGO, (h / 2), paint);
                 }else {
-                    canvas.drawLine(0, (h / 2), w, (h / 2), paint);
+                    canvas.drawLine(ANIMATION_TO, (h / 2), w, (h / 2), paint);
                 }
 
        /* Path path = new Path();

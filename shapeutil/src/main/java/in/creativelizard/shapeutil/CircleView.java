@@ -29,10 +29,11 @@ public class CircleView extends View {
     public String fill_back_color = "#c2c2c2";
     public float RADIOUS;
     public int feel_type;
-    public Drawable draw_back_img;
+    private Drawable draw_back_img;
     public Bitmap draw_back_img_bmp;
     public boolean isFill;
     private Bitmap original;
+    private Canvas mCanvas;
 
     public CircleView(Context ctx, AttributeSet attrs) {
         super(ctx, attrs);
@@ -67,6 +68,7 @@ public class CircleView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
 
+        mCanvas = canvas;
         int w = getWidth(), h = getHeight();
         int cPw = w/2, cPh = h/2;
         if(w>h){
@@ -165,5 +167,13 @@ public class CircleView extends View {
 
     }
 
+    public void setImageCircleImageResources(int drawable){
+        try {
+            draw_back_img_bmp = ((BitmapDrawable)getResources().getDrawable(drawable)).getBitmap();
+            mCanvas.setBitmap(draw_back_img_bmp);
+        }catch (NullPointerException e){
+            //
+        }
+    }
 
 }

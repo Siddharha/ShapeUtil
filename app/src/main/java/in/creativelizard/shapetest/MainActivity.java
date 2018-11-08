@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         imgPerson = findViewById(R.id.imgPerson);
-
+        imgPerson.setImageCircleImageResources(R.drawable.person);
 
     }
 }

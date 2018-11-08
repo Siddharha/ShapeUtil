@@ -6,26 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <in.creativelizard.shapeutil.LineView
+   <!-- <in.creativelizard.shapeutil.LineView
         android:id="@+id/lineView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:ln_progress="10"
+        app:animation_to="0"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:ln_color="#00bcd4"
-        app:ln_stroke="15" />
+        app:ln_stroke="15" />-->
 
     <in.creativelizard.shapeutil.CircleView
         android:id="@+id/imgPerson"
-        android:layout_width="200dp"
+        android:layout_width="266dp"
         android:layout_height="200dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        app:feel_back_color="#c2c2c2"
         app:feel_color="true"
         app:feel_type="resize_center_with_ratio"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lineView"
-        app:feel_back_color="#c2c2c2"
-        app:stroke_size="10"
-        app:src="@color/colorPrimary" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:src="@color/colorPrimary"
+        app:stroke_size="10" />
 </android.support.constraint.ConstraintLayout>
