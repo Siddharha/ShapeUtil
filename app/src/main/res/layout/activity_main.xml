@@ -18,10 +18,14 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
         app:feel_color="true"
-        app:feel_type="resize_center"
+        app:feel_type="resize_center_with_ratio"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/lineView"
+        app:feel_back_color="#c2c2c2"
+        app:stroke_size="10"
         app:src="@color/colorPrimary" />
 </android.support.constraint.ConstraintLayout>

@@ -20,26 +20,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         imgPerson = findViewById(R.id.imgPerson);
 
-        final ImageView imageView = new ImageView(this
-        );
-        Picasso.get().load("https://lh3.googleusercontent.com/" +
-                "cuU3I9olUCLZnj6UEdgAs9QbEWGgVNauEMsWMnYB5s2IC6BAqMX7JcMkV" +
-                "-59dCstDw=s180").into(imageView,new com.squareup.picasso.Callback() {
-            @Override
-            public void onSuccess() {
-                BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
-                Bitmap bitmap = drawable.getBitmap();
-
-                imgPerson.fill_back_color = "#c2c2c2";
-                imgPerson.draw_back_img_bmp = bitmap;
-            }
-
-            @Override
-            public void onError(Exception ex) {
-
-            }
-        });
-
 
     }
 }
