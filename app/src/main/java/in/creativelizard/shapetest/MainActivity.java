@@ -1,28 +1,29 @@
 package in.creativelizard.shapetest;
 
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.ImageView;
 
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
 import in.creativelizard.shapeutil.CircleView;
+import in.creativelizard.shapeutil.ShapeImageView;
 
 public class MainActivity extends AppCompatActivity {
 
     private CircleView imgPerson;
+    private ShapeImageView siMain;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         imgPerson = findViewById(R.id.imgPerson);
-        //imgPerson.setImageCircleImageResources(R.drawable.person);
-       // imgPerson.setImageCircleImageResources(R.drawable.person);
+        siMain = findViewById(R.id.siMain);
+        //imgPerson.setImageShapeImageResources(R.drawable.person);
+       // imgPerson.setImageShapeImageResources(R.drawable.person);
+        siMain.setImageShapeImageResources(R.drawable.person);
         loadImage();
 
     }
@@ -32,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
                 imgPerson.setImageCircleImageBitmap(bitmap);
+               // siMain.setShapeImageBitmap(bitmap);
 
             }
 

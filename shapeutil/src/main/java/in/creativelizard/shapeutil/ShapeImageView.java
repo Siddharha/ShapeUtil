@@ -22,8 +22,11 @@ public class ShapeImageView extends View {
     private Context mContext;
     Paint paint ;
     public int feel_type;
+    public Bitmap draw_back_img_bmp;
     public String fill_back_color = "#c2c2c2";
     public Drawable draw_back_img,draw_back_img_mask;
+    private Canvas mCanvas,canvas_rslt;
+    private Bitmap original, mask;
 
     public ShapeImageView(Context ctx, AttributeSet attrs) {
         super(ctx, attrs);
@@ -50,14 +53,17 @@ public class ShapeImageView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
 
-
+        mCanvas = canvas;
         int w = getWidth(), h = getHeight();
         paint.setAntiAlias(true);
-
+        try {
+            draw_back_img_bmp = ((BitmapDrawable) draw_back_img).getBitmap();
+        }catch (NullPointerException e){
+            //
+        }
         if (draw_back_img!=null){
-                Bitmap original = ((BitmapDrawable) draw_back_img).getBitmap();
-                Bitmap mask = ((BitmapDrawable) draw_back_img_mask).getBitmap();
-
+            original = draw_back_img_bmp;
+            mask = ((BitmapDrawable) draw_back_img_mask).getBitmap();
             switch (feel_type){
                 case 0:
                     original = Bitmap.createScaledBitmap(original, w, h, false);
@@ -96,7 +102,7 @@ public class ShapeImageView extends View {
                     //canvas_mask.drawBitmap(mask, centreX, centreY, null);
 
                     Bitmap result = Bitmap.createBitmap(original.getWidth(), original.getHeight(), Bitmap.Config.ARGB_8888);
-                    Canvas canvas_rslt = new Canvas(result);
+                     canvas_rslt = new Canvas(result);
                     Paint paint_mask = new Paint(Paint.ANTI_ALIAS_FLAG);
                     paint_mask.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_IN));
 
@@ -132,5 +138,25 @@ public class ShapeImageView extends View {
         path.close();*/
         //canvas.drawPath(path, paint);
 
+    }
+
+    public void setImageShapeImageResources(int drawable){
+        try {
+            draw_back_img_bmp = ((BitmapDrawable)getResources().getDrawable(drawable)).getBitmap();
+            /*canvas_rslt.setBitmap(draw_back_img_bmp);*/
+            invalidate();
+        }catch (NullPointerException e){
+            //
+        }
+    }
+
+    public void setShapeImageBitmap(Bitmap bitmap){
+        try {
+            draw_back_img_bmp =bitmap;
+            canvas_rslt.setBitmap(draw_back_img_bmp);
+            invalidate();
+        }catch (NullPointerException e){
+            //
+        }
     }
 }

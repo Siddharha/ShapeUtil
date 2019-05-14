@@ -39,22 +39,21 @@
         app:stroke_size="10" />
 
     <in.creativelizard.shapeutil.ShapeImageView
-        android:layout_width="300dp"
-        android:layout_height="400dp"
+        android:id="@+id/siMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
-        app:sm_feel_type="sm_resize_center_with_ratio"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgPerson"
         app:sm_draw_img_back="@drawable/img"
         app:sm_draw_img_mask="@drawable/mask"
         app:sm_feel_back_color="#00bcd4"
-        app:sm_feel_color="true" />
+        app:sm_feel_color="true"
+        app:sm_feel_type="sm_resize_center_with_ratio" />
 </android.support.constraint.ConstraintLayout>
