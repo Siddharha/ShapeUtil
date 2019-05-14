@@ -15,6 +15,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.ImageView;
 
 /**
  * Created by Siddhartha on 6/8/2018.
@@ -171,6 +172,17 @@ public class CircleView extends View {
         try {
             draw_back_img_bmp = ((BitmapDrawable)getResources().getDrawable(drawable)).getBitmap();
             mCanvas.setBitmap(draw_back_img_bmp);
+            invalidate();
+        }catch (NullPointerException e){
+            //
+        }
+    }
+
+    public void setImageCircleImageBitmap(Bitmap bitmap){
+        try {
+           draw_back_img_bmp =bitmap;
+            mCanvas.setBitmap(draw_back_img_bmp);
+            invalidate();
         }catch (NullPointerException e){
             //
         }

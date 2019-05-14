@@ -20,17 +20,22 @@
 
     <in.creativelizard.shapeutil.CircleView
         android:id="@+id/imgPerson"
-        android:layout_width="266dp"
-        android:layout_height="200dp"
+        android:layout_width="336dp"
+        android:layout_height="300dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        app:draw_img_back="@drawable/person"
         app:feel_back_color="#c2c2c2"
         app:feel_color="true"
-        app:feel_type="resize_center_with_ratio"
+        app:feel_type="resize_center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.572"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.12"
         app:src="@color/colorPrimary"
         app:stroke_size="10" />
+
+
 </android.support.constraint.ConstraintLayout>
