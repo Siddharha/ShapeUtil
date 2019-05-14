@@ -5,5 +5,10 @@
         <attr name="sm_feel_back_color" format="string" />
         <attr name="sm_draw_img_back" format="integer" />
         <attr name="sm_draw_img_mask" format="integer" />
+        <attr name="sm_feel_type" format="enum">
+            <enum name="sm_resize_center" value="0"/>
+            <enum name="sm_center" value="1"/>
+            <enum name="sm_resize_center_with_ratio" value="2"/>
+        </attr>
     </declare-styleable>
 </resources>

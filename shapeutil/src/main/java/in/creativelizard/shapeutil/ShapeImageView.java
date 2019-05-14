@@ -21,6 +21,7 @@ import android.view.View;
 public class ShapeImageView extends View {
     private Context mContext;
     Paint paint ;
+    public int feel_type;
     public String fill_back_color = "#c2c2c2";
     public Drawable draw_back_img,draw_back_img_mask;
 
@@ -36,6 +37,7 @@ public class ShapeImageView extends View {
             fill_back_color =a.getString(R.styleable.ShapeImageView_sm_feel_back_color);
             draw_back_img =a.getDrawable(R.styleable.ShapeImageView_sm_draw_img_back);
             draw_back_img_mask = a.getDrawable(R.styleable.ShapeImageView_sm_draw_img_mask);
+            feel_type = a.getInteger(R.styleable.ShapeImageView_sm_feel_type, 1);
         } finally {
             a.recycle();
         }
@@ -55,6 +57,30 @@ public class ShapeImageView extends View {
         if (draw_back_img!=null){
                 Bitmap original = ((BitmapDrawable) draw_back_img).getBitmap();
                 Bitmap mask = ((BitmapDrawable) draw_back_img_mask).getBitmap();
+
+            switch (feel_type){
+                case 0:
+                    original = Bitmap.createScaledBitmap(original, w, h, false);
+                    mask = Bitmap.createScaledBitmap(mask, w, h, false);
+                    break;
+                case 1:
+                    //original = Bitmap.createScaledBitmap(original, w, h, false);
+                    break;
+                case 2:
+                    if(w>h){
+                        original = Bitmap.createScaledBitmap(original, h, h, false);
+                        mask = Bitmap.createScaledBitmap(mask, h, h, false);
+                    }else if(w<h){
+                        original = Bitmap.createScaledBitmap(original, w, w, false);
+                        mask = Bitmap.createScaledBitmap(mask, w, w, false);
+                    }else {
+                        original = Bitmap.createScaledBitmap(original, w, h, false);
+                        mask = Bitmap.createScaledBitmap(mask, w, h, false);
+                    }
+                    break;
+            }
+
+
                  //Canvas canvas_mask = new Canvas(mask);
                 int centreX = (w - original.getWidth()) / 2;
 
