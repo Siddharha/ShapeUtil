@@ -140,10 +140,10 @@ public class ShapeImageView extends View {
 
     }
 
-    public void setImageShapeImageResources(int drawable){
+  /*  public void setImageShapeImageResources(int drawable){
         try {
             draw_back_img_bmp = ((BitmapDrawable)getResources().getDrawable(drawable)).getBitmap();
-            /*canvas_rslt.setBitmap(draw_back_img_bmp);*/
+            *//*canvas_rslt.setBitmap(draw_back_img_bmp);*//*
             invalidate();
         }catch (NullPointerException e){
             //
@@ -158,5 +158,5 @@ public class ShapeImageView extends View {
         }catch (NullPointerException e){
             //
         }
-    }
+    }*/
 }

@@ -14,16 +14,16 @@ import in.creativelizard.shapeutil.ShapeImageView;
 public class MainActivity extends AppCompatActivity {
 
     private CircleView imgPerson;
-    private ShapeImageView siMain;
+    //private ShapeImageView siMain;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         imgPerson = findViewById(R.id.imgPerson);
-        siMain = findViewById(R.id.siMain);
-        //imgPerson.setImageShapeImageResources(R.drawable.person);
+        //siMain = findViewById(R.id.siMain);
+      //  imgPerson.setImageCircleImageResources(R.drawable.person);
        // imgPerson.setImageShapeImageResources(R.drawable.person);
-        siMain.setImageShapeImageResources(R.drawable.person);
+       // siMain.setImageShapeImageResources(R.drawable.person);
         loadImage();
 
     }

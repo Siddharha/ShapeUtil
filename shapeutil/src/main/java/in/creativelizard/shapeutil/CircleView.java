@@ -171,7 +171,6 @@ public class CircleView extends View {
     public void setImageCircleImageResources(int drawable){
         try {
             draw_back_img_bmp = ((BitmapDrawable)getResources().getDrawable(drawable)).getBitmap();
-            mCanvas.setBitmap(draw_back_img_bmp);
             invalidate();
         }catch (NullPointerException e){
             //
@@ -181,7 +180,6 @@ public class CircleView extends View {
     public void setImageCircleImageBitmap(Bitmap bitmap){
         try {
            draw_back_img_bmp =bitmap;
-            mCanvas.setBitmap(draw_back_img_bmp);
             invalidate();
         }catch (NullPointerException e){
             //
