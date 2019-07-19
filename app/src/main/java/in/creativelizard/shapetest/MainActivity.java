@@ -9,23 +9,26 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
 
 import in.creativelizard.shapeutil.CircleView;
+import in.creativelizard.shapeutil.FitDoughnut;
 import in.creativelizard.shapeutil.ShapeImageView;
 
 public class MainActivity extends AppCompatActivity {
 
     private CircleView imgPerson;
+    private FitDoughnut cdChart;
     //private ShapeImageView siMain;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         imgPerson = findViewById(R.id.imgPerson);
+        cdChart = findViewById(R.id.cdChart);
         //siMain = findViewById(R.id.siMain);
       //  imgPerson.setImageCircleImageResources(R.drawable.person);
        // imgPerson.setImageShapeImageResources(R.drawable.person);
        // siMain.setImageShapeImageResources(R.drawable.person);
         loadImage();
-
+        cdChart.animateSetPercent(50f);
     }
 
     private void loadImage() {
